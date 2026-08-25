@@ -454,6 +454,39 @@
         }
 
         @media(max-width: 768px) {
+            .desktop-title-block { display: none !important; }
+            .desktop-subtitle { display: none !important; }
+            .mobile-title-block { 
+                display: block !important; 
+                font-size: 2.6rem !important;
+                line-height: 1.15 !important;
+                text-align: center !important;
+                position: relative;
+                left: 8px !important; /* 微調向右靠，平衡問號的視覺重心 */
+            }
+            .mobile-subtitle { 
+                display: block !important; 
+                font-size: 1.25rem !important;
+                letter-spacing: 1px !important;
+                margin-top: 18px !important;
+                line-height: 1.5 !important;
+            }
+            .giant-da-ai {
+                font-size: 1.5em !important;
+                font-weight: 700;
+                letter-spacing: 4px;
+            }
+            .rest-title {
+                font-size: 0.9em !important;
+                letter-spacing: 2px;
+            }
+            .near-q {
+                letter-spacing: -3px !important;
+            }
+            .hero-overlay {
+                top: 40px !important;
+            }
+
             .chart2-flex {
                 flex-direction: column;
                 gap: 10px;
@@ -628,38 +661,6 @@
 
         .mobile-title-block { display: none; }
         .desktop-title-block { display: block; }
-
-        @media(max-width: 768px) {
-            .desktop-title-block { display: none !important; }
-            .mobile-title-block { 
-                display: block !important; 
-                font-size: 2.6rem !important;
-                line-height: 1.15 !important;
-                text-align: center !important;
-                position: relative;
-                left: -6px !important;
-            }
-            .giant-da-ai {
-                font-size: 1.5em !important;
-                font-weight: 700;
-                letter-spacing: 4px;
-            }
-            .rest-title {
-                font-size: 0.9em !important;
-                letter-spacing: 2px;
-            }
-            .near-q {
-                letter-spacing: -3px !important;
-            }
-            .subtitle {
-                font-size: 1.25rem !important;
-                letter-spacing: 1px !important;
-                margin-top: 15px !important;
-            }
-            .hero-overlay {
-                top: 0 !important;
-            }
-        }
     </style>
 </head>
 <body>
@@ -673,7 +674,8 @@
                 <span class="giant-da-ai">大愛</span><br>
                 <span class="rest-title">為何走不<span class="near-q">遠？</span></span>
             </h1>
-            <div class="subtitle">每年逾千人在等待中離世，台灣器捐卡在哪</div>
+            <div class="subtitle desktop-subtitle">每年逾千人在等待中離世，台灣器捐卡在哪</div>
+            <div class="subtitle mobile-subtitle" style="display: none;">每年逾千人在等待中離世<br>台灣器捐卡在哪</div>
         </div>
     </section>
 
