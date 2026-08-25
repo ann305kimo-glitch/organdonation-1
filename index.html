@@ -401,6 +401,15 @@
             flex-shrink: 0;
             transition: transform 0.4s ease;
         }
+        .chart2-inner-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .chart2-inner-group .sub-text {
+            margin-top: 10px !important;
+        }
         .chart2-line-group {
             position: relative;
             margin-left: 40px;
@@ -454,7 +463,11 @@
                 width: 220px;
                 height: 220px;
             }
-            .chart2-circle .num { font-size: 2.2rem !important; }
+            .chart2-circle .num { font-size: 2.0rem !important; }
+            .chart2-circle div:last-child, .chart2-inner-group .sub-text {
+                margin-top: 8px !important;
+                font-size: 0.9rem !important;
+            }
             .chart2-line-group {
                 margin-left: 0;
                 flex-direction: column;
@@ -577,6 +590,7 @@
             .story-container h2 {
                 line-height: 1.35 !important;
                 margin-bottom: 20px !important;
+                font-size: 1.75rem !important;
             }
             .chart-wrapper-clean {
                 margin-bottom: 50px !important;
@@ -584,13 +598,6 @@
             }
             .chart-minimal-title {
                 margin-bottom: 20px !important;
-            }
-            .chart2-circle .num {
-                font-size: 2.0rem !important;
-            }
-            .chart2-circle div:last-child {
-                margin-top: 2px !important;
-                font-size: 0.9rem !important;
             }
             .custom-chart4-legend {
                 padding: 0 10px;
@@ -619,16 +626,35 @@
             }
         }
 
+        .mobile-title-block { display: none; }
+        .desktop-title-block { display: block; }
+
         @media(max-width: 768px) {
-            h1 {
-                font-size: 2.8rem !important;
-                letter-spacing: 2px !important;
-                left: 0 !important;
+            .desktop-title-block { display: none !important; }
+            .mobile-title-block { 
+                display: block !important; 
+                font-size: 2.6rem !important;
+                line-height: 1.15 !important;
+                text-align: center !important;
+                position: relative;
+                left: -6px !important;
+            }
+            .giant-da-ai {
+                font-size: 1.5em !important;
+                font-weight: 700;
+                letter-spacing: 4px;
+            }
+            .rest-title {
+                font-size: 0.9em !important;
+                letter-spacing: 2px;
+            }
+            .near-q {
+                letter-spacing: -3px !important;
             }
             .subtitle {
                 font-size: 1.25rem !important;
                 letter-spacing: 1px !important;
-                margin-top: 10px !important;
+                margin-top: 15px !important;
             }
             .hero-overlay {
                 top: 0 !important;
@@ -642,7 +668,11 @@
         <img src="images/hero-bg.jpg" class="bg-img desktop-bg" alt="主視覺">
         <img src="images/hero-bg-mobile.jpg" class="bg-img mobile-bg" alt="主視覺">
         <div class="hero-overlay" data-aos="fade-up" data-aos-duration="1200">
-            <h1 class="hero-title">大愛，為何走不遠？</h1>
+            <h1 class="hero-title desktop-title-block">大愛，為何走不遠？</h1>
+            <h1 class="hero-title mobile-title-block">
+                <span class="giant-da-ai">大愛</span><br>
+                <span class="rest-title">為何走不<span class="near-q">遠？</span></span>
+            </h1>
             <div class="subtitle">每年逾千人在等待中離世，台灣器捐卡在哪</div>
         </div>
     </section>
@@ -674,8 +704,10 @@
             <div class="chart-minimal-title">圖2：有器捐意願，為何還是不夠？</div>
             <div class="chart2-flex">
                 <div class="zoom-circle chart2-circle">
-                    <div class="num" style="font-size: 2.5rem; font-weight: bold; letter-spacing: 1px;">42,746人</div>
-                    <div style="font-size: 1rem; margin-top: 2px; opacity: 0.9; line-height: 1.2;">2025年新增註記器捐意願</div>
+                    <div class="chart2-inner-group">
+                        <div class="num" style="font-size: 2.5rem; font-weight: bold; letter-spacing: 1px; line-height: 1.1;">42,746人</div>
+                        <div class="sub-text" style="font-size: 1rem; margin-top: 10px; opacity: 0.9; line-height: 1.2;">2025年新增註記器捐意願</div>
+                    </div>
                 </div>
                 <div class="chart2-line-group">
                     <svg class="chart2-line desktop-svg" width="120" height="80" style="overflow: visible;">
@@ -782,8 +814,7 @@
             </table>
             <div style="font-size: 0.9rem; color: #718096; margin-top: 15px; line-height: 1.6;">
                 <p style="margin: 0 0 5px 0;">註：僅列出全球前兩名及西太平洋與東南亞部分國家</p>
-                <p style="margin: 0 0 5px 0;">資料來源：Global Observatory on Donation and Transplantation，https://www.transplant-observatory.org/</p>
-                <p style="margin: 0;">整理：楊雅棠</p>
+                <p style="margin: 0;">資料來源：全球器官捐贈與移植觀察站（GODT）、器官捐贈移植登錄及病人自主推廣中心整理</p>
             </div>
         </div>
 
