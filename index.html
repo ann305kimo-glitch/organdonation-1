@@ -6,6 +6,7 @@
     <title>大愛，為何走不遠？ | 康健雜誌深度專題</title>
     <!-- 引入 AOS 動畫庫樣式 -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- 引入 Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -32,10 +33,12 @@
 
         h1, h2, .hero-overlay h1, .chart-minimal-title, .journey-step h2 {
             font-family: "Noto Serif TC", "Source Han Serif", "微軟正黑體", serif;
+            font-weight: 700;
         }
 
         .big-quote {
             font-family: "Noto Serif TC", "Source Han Serif", "微軟正黑體", serif;
+            font-weight: 600;
         }
         .story-container, .story-container p {
             font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
@@ -159,7 +162,7 @@
             font-size: 6rem;
             color: var(--primary-color);
             opacity: 0.15;
-            font-family: Georgia, serif;
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
             line-height: 1;
         }
         .big-quote::after {
@@ -170,7 +173,7 @@
             font-size: 6rem;
             color: var(--primary-color);
             opacity: 0.15;
-            font-family: Georgia, serif;
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
             line-height: 1;
         }
 
@@ -183,7 +186,7 @@
         .chart-minimal-title {
             font-size: 1.45rem;
             color: #1a202c;
-            margin-bottom: 30px;
+            margin-bottom: 45px;
             font-weight: 700;
             text-align: center;
             border-left: none;
@@ -193,11 +196,11 @@
         .chart-wrapper-clean {
             position: relative;
             width: 100%;
-            margin-bottom: 120px;
+            margin-bottom: 150px;
             background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 12px 35px rgba(0,0,0,0.06);
-            padding: 40px;
+            padding: 40px; /* 桌面版維持原樣 40px */
             box-sizing: border-box;
             border: 1px solid rgba(0,0,0,0.02);
         }
@@ -510,7 +513,6 @@
             }
         }
 
-        /* 針對手機版圖四外層容器保留足夠高度給下方自訂圖例 */
         @media(max-width: 768px) {
             .chart-wrapper-clean:has(#chart4) .chart-canvas-wrapper {
                 height: 380px !important;
@@ -533,7 +535,6 @@
             color: #fff;
         }
     
-        /* 手機版圖四自訂圖例樣式 */
         .custom-chart4-legend {
             display: none;
             justify-content: center;
@@ -571,21 +572,28 @@
             }
         }
 
-.journey-step h2 .journey-sub-title {
-            font-size: 1.45rem; /* 第二行小標題的字體大小，可依需求調整 */
-            font-weight: 500;   /* 字體粗細，讓視覺層次更分明 */
-            display: inline-block;
-            margin-top: 8px;    /* 與第一行標題保持的間距 */
-            line-height: 1.4;
-        }
-
-        /* 針對手機版同步調整 */
-        @media(max-width: 960px) {
-            .journey-step h2 .journey-sub-title {
-                font-size: 1.1rem !important; /* 手機版對應縮小 */
+        @media(max-width: 768px) {
+            .chart-wrapper-clean {
+                padding: 36px 24px !important;
+            }
+            .chart-canvas-wrapper {
+                height: 240px !important;
+            }
+            .chart-wrapper-clean:has(#chart4) .chart-canvas-wrapper {
+                height: 280px !important;
+            }
+            .journey-wrapper {
+                padding: 60px 12px !important;
+            }
+            .journey-container {
+                max-width: 100% !important;
+                padding: 0 16px !important;
+            }
+            .journey-step {
+                padding: 0 !important;
+                margin-bottom: 50px !important;
             }
         }
-
     </style>
 </head>
 <body>
@@ -619,7 +627,7 @@
     </div>
 
     <div class="story-container">
-        <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;" data-aos="fade-up">等不到的希望：全台1.1萬人苦等器官，器捐為何這麼難完成？</h2>
+        <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 45px; border-bottom: 2px solid #eee; padding-bottom: 10px;" data-aos="fade-up">等不到的希望：全台1.1萬人苦等器官，器捐為何這麼難完成？</h2>
         <p data-aos="fade-up">首起醫師因涉嫌仲介病患赴中國接受器官移植而遭廢止醫師證書的陳堯俐案，再度讓「器官移植旅遊」浮上檯面。但當社會聚焦法律、道德與器官來源爭議時，更根本的問題是：病人為何願意花費數百萬元，冒著生命危險遠赴海外移植？這背後也正凸顯出台灣器官「供給不足」的問題。</p>
         <p data-aos="fade-up">台灣每年約有3萬～4萬人註記器捐意願，實際完成捐贈的人數卻在疫情後持續下降，2025年接受移植的人數更是10年來新低。從醫院通報、器官評估、協調團隊介入到家屬同意，究竟是哪個環節，讓原本可能實現的善意中斷？</p>
     </div>
@@ -745,7 +753,7 @@
             </table>
             <div style="font-size: 0.9rem; color: #718096; margin-top: 15px; line-height: 1.6;">
                 <p style="margin: 0 0 5px 0;">註：僅列出全球前兩名及西太平洋與東南亞部分國家</p>
-                <p style="margin: 0 0 5px 0;">資料來源：全球器官捐贈與移植觀察站（GODT）、器官捐贈移植登錄及病人自主推廣中心整理</p>
+                <p style="margin: 0 0 5px 0;">資料來源：Global Observatory on Donation and Transplantation，https://www.transplant-observatory.org/</p>
                 <p style="margin: 0;">整理：楊雅棠</p>
             </div>
         </div>
@@ -786,7 +794,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init({ once: true, offset: 100 });
 
-            // 通用觀察器函數：當目標元素進入視野時才初始化並觸發圖表
             const observeChart = (selector, createChartFn) => {
                 const element = document.querySelector(selector);
                 if (!element) return;
@@ -802,7 +809,6 @@
                 observer.observe(element);
             };
 
-            // 圖1
             observeChart('#chart1', () => {
                 const chart1Annotations = {
                     id: 'chart1Annotations',
@@ -913,7 +919,6 @@
                 });
             });
 
-            // 圖2 數字與 SVG 動畫
             const numLeft = document.querySelector('.zoom-circle .num');
             const numRight = document.querySelector('.chart2-text div:first-child');
             if (numLeft && numRight) {
@@ -951,7 +956,6 @@
                 }
             }
 
-            // 圖3
             observeChart('#chart3', () => {
                 new Chart(document.getElementById('chart3').getContext('2d'), {
                     type: 'bar',
@@ -974,7 +978,6 @@
                 });
             });
 
-            // 圖4
             observeChart('#chart4', () => {
                 const chart4CenterTextPlugin = {
                     id: 'chart4CenterText',
